@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="score_text">30sp</dimen>
+    <dimen name="score_margin">10dp</dimen>
+    <dimen name="score_bottom">50dp</dimen>
+</resources>
