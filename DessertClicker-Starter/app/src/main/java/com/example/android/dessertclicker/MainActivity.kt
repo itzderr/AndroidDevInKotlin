@@ -28,6 +28,7 @@ import com.example.android.dessertclicker.databinding.ActivityMainBinding
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var dessertTimer: DessertTimer
 
     private var revenue = 0
     private var dessertsSold = 0
@@ -65,6 +66,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // i: informational d: debug e: error w: warning
+        // AppCompatActivity -> FragmentActivity implements LifecycleOwner
+        dessertTimer = DessertTimer(this.lifecycle)
         Timber.i("onCreate called")
 
         // Use Data Binding to get reference to the views
