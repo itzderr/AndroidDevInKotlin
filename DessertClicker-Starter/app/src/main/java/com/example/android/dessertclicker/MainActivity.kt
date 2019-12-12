@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,6 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // i: informational d: debug e: error w: warning
+        Timber.i("onCreate called")
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -77,6 +80,54 @@ class MainActivity : AppCompatActivity() {
 
         // Make sure the correct dessert is showing
         binding.dessertButton.setImageResource(currentDessert.imageId)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Called when the Activity is `becoming` visible to User
+        // Can be called more than once during lifecycle
+        Timber.i("onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Called when Activity will start interacting with user
+        // `running state` - starts accepting user input
+        Timber.i("onResume called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Called when system is about to resume a previous activity
+        // `The Activity is partly visible but user is leaving the activity`
+        Timber.i("onPause called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Called when the Activity is no longer visible to the user
+        // New Activity is being started, an existing one is brought in front
+        // of this activity, or this one is being destroyed.
+        // Operations that were too heavy-weight for onPause
+        Timber.i("onStop called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        // Called after Activity has been stopped,
+        // and started again.
+        Timber.i("onRestart called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Final call before this Activity is destroyed
+        // When User navigates to previous Activity, or configuration changes (orientation)
+        // Manually call finish() method to destroy the activity
+        // and call isFinishing() method to check
+        // System `may` destroy Activity without calling this,
+        // so use onPause or onStop to save data or state
+        Timber.i("onDestroy called")
     }
 
     /**
