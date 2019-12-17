@@ -55,6 +55,11 @@ class GameWonFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.winner_menu, menu)
+        // if there's no activity that can handle the intent
+        if (getShareIntent().resolveActivity(activity!!.packageManager) == null) {
+            // then just hide the share button
+            menu?.findItem(R.id.share)?.isVisible = false
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
