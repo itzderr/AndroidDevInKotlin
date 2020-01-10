@@ -43,8 +43,6 @@ class MainActivity : AppCompatActivity(), OnSWClickListener {
                     recyclerView.adapter = adapter
                 }
             }
-
-
     }
 
     override fun onClick(v: View, item: SWChar) {
