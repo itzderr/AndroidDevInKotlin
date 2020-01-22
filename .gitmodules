@@ -1,3 +1,6 @@
 [submodule "architecture-samples"]
 	path = architecture-samples
 	url = http://github.com/android/architecture-samples.git
+[submodule "architecture-components-samples"]
+	path = architecture-components-samples
+	url = https://github.com/android/architecture-components-samples.git
