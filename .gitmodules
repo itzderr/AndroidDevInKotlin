@@ -4,3 +4,6 @@
 [submodule "architecture-components-samples"]
 	path = architecture-components-samples
 	url = https://github.com/android/architecture-components-samples.git
+[submodule "Assignment3-AndroidKotlin"]
+	path = Assignment3-AndroidKotlin
+	url = https://github.com/itzderr/Assignment3-AndroidKotlin.git
